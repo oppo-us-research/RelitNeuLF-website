@@ -1,0 +1,230 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RelitNeuLF</title>
+<link href="./style_files/style.css" rel="stylesheet">
+<script type="text/javascript" src="./style_files/jquery.mlens-1.0.min.js"></script> 
+<script type="text/javascript" src="./style_files/jquery.js"></script>
+<script type="text/javascript" src="./style_files/video-comparison.js"></script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+<!-- <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script> -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWQ7C72CGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PWQ7C72CGK');
+</script>
+
+<meta charset="utf-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> -->
+<meta name="viewport" content="width=1000; user-scalable=0;" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:site_name" content="RelitNeuLF: Subject driven Text-to-3D generation"/>
+<meta property="og:type" content="video.other" />
+<meta property="og:title" content="RelitNeuLF: Subject driven Text-to-3D generation" />
+<meta property="og:description" content="RelitNeuLF: Subject driven text-to-3D generation" />
+<meta property="og:url" content="https://RelitNeuLF.github.io/" />
+
+<meta property="article:publisher" content="https://RelitNeuLF.github.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="RelitNeuLF: Subject driven Text-to-3D generation" />
+<meta name="twitter:description" content="We combine DreamBooth and DreamFusion for subject driven text to 3D generation" />
+<meta name="twitter:url" content="https://RelitNeuLF.github.io/" />
+    <!-- <meta name="twitter:site" content="" /> -->
+
+
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  #video-compare-container {
+	display: inline-block;
+	line-height: 0;
+	position: relative;
+	width: 100%;
+	padding-top: 42.3%;
+}
+#video-compare-container > video {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
+#video-clipper {
+	width: 50%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+#video-clipper video {
+	width: 200%;
+	position: absolute;
+	height: 100%;
+}
+  .column {
+    float: left;
+    width: 20%;
+    padding: 5px;
+  }
+
+  .colum4 {
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  </style>
+ <style>
+  .grid {
+   display: flex;
+   flex-direction: row;
+   padding: 5px;
+   align-content: center;
+   /* flex-wrap: wrap; */
+  }
+  .grid > div {
+   flex-grow: 1;
+   flex-shrink: 1;
+   padding: 5px;
+   
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+html {
+  scroll-behavior: smooth;
+}
+  </style>
+</head>
+
+<body>
+<div class="content">
+  <h1><strong>Relit-NeuLF: Efficient Novel View Synthesis with Neural 4D Light Field</strong></h1>
+  <h2 style="text-align:center;"><strong></strong>ACM MM 2023</strong></h2>
+  <p id="authors"><a href="https://amitraj93.github.io/">Zhong Li<sup>1</sup></a> <a href="https://www.linkedin.com/in/srinivas-kaza-64223b74">Liangchen Song<sup>2</sup></a> <a href="https://poolio.github.io/">Zhang Chen<sup>1</sup></a> <a href="https://m-niemeyer.github.io/">Xiangyu Du<sup>1</sup></a> <a href="https://natanielruiz.github.io/">Lele Chen<sup>1</sup></a> 
+  <p id="authors"><a href="https://jonbarron.info/">Junsong Yuan<sup>2</sup></a><a href="http://people.csail.mit.edu/yzli/">Yi Xu<sup>1</sup></a>
+    <br><sup>1</sup>OPPO US Research Center
+    <br><sup>2</sup>University at Buffalo 
+  </span></p>
+  
+  <img src="teaser.gif" class="teaser-gif" style="width:80%;" loop=infinite><br>
+  <h3 style="text-align:center"><em>A neural 4D light field approach to simultaneously adjust lighting and create new viewpoints for complex scenes modifications.</em></h3>
+    <font size="+2">
+          <p style="text-align: center;">
+            <a href="http://arxiv.org/abs/2303.13508" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#sum-video">[Summary Video]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#bib">[BibTeX]</a>
+          </p>
+    </font>
+</div>
+<div class="content">
+  <h2 style="text-align:center;">Abstract</h2>
+  <p>In this paper, we address the problem of simultaneous relighting and novel view synthesis of a complex scene from multi-view images with a limited number of light sources. We propose an analysis-synthesis approach called Relit-NeuLF. Following the recent neural 4D light field network (NeuLF), Relit-NeuLF first leverages a two-plane light field representation to parameterize each ray in a 4D coordinate system, enabling efficient learning and inference. Then, we recover the spatially-varying bidirectional reflectance distribution function (SVBRDF) of a 3D scene in a self-supervised manner. A DecomposeNet learns to map each ray to its SVBRDF components: albedo, normal, and roughness. Based on the decomposed BRDF components and conditioning light directions, a RenderNet learns to synthesize the color of the ray. To self-supervise the SVBRDF decomposition, we encourage the predicted ray color to be close to the physically-based rendering result using the microfacet model. Comprehensive experiments demonstrate that the proposed method is efficient and effective on both synthetic data and real-world human face data, and outperforms the state-of-the-art results.</p>
+</div>
+
+<div class="content">
+  <h2>Approach</h2>
+  <p> An overview of our proposed Relit-NeuLF. The input is the 4D coordinate of a ray and a light direction. The output is the RGB radiance of the ray under the light direction.</p>
+  <br>
+  <img src="./pipeline.png" style="width: 100%"> <br>
+  <p> Our DecomposeNet first takes the 4D coordinate as input and outputs SVBRDF parameters. Next, the SVBRDF parameters together with the light direction are fed into an implicit rendering network (RenderNet) to synthesize the target color. The network is trained end-to-end with photometric loss and self-supervised rendering loss.</p>
+</div>
+
+<div class="content">
+  <h2>LumiView dataset</h2>
+  <p> We used Blender’s physically based path tracer renderer and rendered 3 textured objects: synthetic face, wood train, and face mask. We set up 5 × 5 camera views on the front hemisphere, set 105 directional light sources around the full sphere, and render at a resolution of 800 × 800 pixels. Our rendered data could be download <a href="https://huggingface.co/datasets/lizhong323/LumiView">here</a>.
+  </p>
+  <div style="text-align: center;">
+    <img src="./dataset_teaser.png" style="width: 95%; margin: 0 auto;">
+  </div>
+</div>
+
+<div class="content">
+  <h2>Relighting and View Real Results</h2>
+  <p> Our Relit-NeuLF model can generate rendering results
+    under novel viewpoints and novel lighting directions. Here, we show qualitative relighting results for different synthetic and real 
+    data.
+  </p>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <img src="./gif/fvvre_synthetic.gif" style="width: 50%;">
+    <img src="./gif/fvvre_real.gif" style="width: 48%;">
+  </div>
+</div>
+
+<div class="content">
+  <h2>HDRI relighting results</h2>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <img src="./gif/env_synthetic_fc.gif" style="width: 54%;">
+    <img src="./gif/env_synthetic.gif" style="width: 44%;">
+  </div>
+  <br>
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+    <img src="./gif/env_kat.gif" style="width: 32%;">
+    <img src="./gif/env_ll.gif" style="width: 32%;">
+    <img src="./gif/env_wt.gif" style="width: 32%;">
+  </div>
+  
+
+  <br>
+  <p> We demonstrate the ability
+    of our method to synthesize visually pleasing relighting under arbitrary HDRI environment maps. Because our method can recover the
+    reflectance under novel lighting directions with a high angular resolution, we can relight the object by treating an HDRI environment
+    map as a collection of OLAT lighting conditions.
+  </p>
+</div>
+
+
+<!-- <div class="content">
+  <h2>Societal Impact</h2>
+  <p>This project aims to provide users with an effective tool for synthesizing personal subjects (animals, objects) in different contexts. While general text-to-image models might be biased towards specific attributes when synthesizing images from text, our approach enables the user to get a better reconstruction of their desirable subjects. On contrary, malicious parties might try to use such images to mislead viewers. This is a common issue, existing in other generative models approaches or content manipulation techniques. Future research in generative modeling, and specifically of personalized generative priors, must continue investigating and revalidating these concerns.</p>
+  <br>
+</div> -->
+<div class="content">
+  <a id="bib"><h2>BibTex</h2></a>
+  <code> @article{li2023relitneulf,<br>
+  &nbsp;&nbsp;title={Relit-NeuLF: Efficient Novel View Synthesis with Neural 4D Light Field},<br>
+  &nbsp;&nbsp;author={Li, Zhong, Song, Liangchen, Chen, Zhang, Du, Xiangyu, Chen, Lele, Yuan, Junsong, Xu, Yi},<br>
+  &nbsp;&nbsp;booktitle={Proceedings of the 31th ACM International Conference on Multimedia},<br>
+  &nbsp;&nbsp;year={2023}<br>
+  } </code> 
+</div>
+<!-- <div class="content" id="acknowledgements">
+  <p><strong>Acknowledgements</strong>:
+  </p>
+</div> -->
+<div class="content">
+  <h2>Acknowledgements</h2>
+  <p>We wish to convey our gratitude to our previous intern, Yuqi Ding,
+    for his foundational efforts on the dome structure and the develop-
+    ment of the multi-lighting system.</p>
+  <p>Website adapted from  <a href="https://dreambooth.github.io/">Dreambooth</a>.</p>
+</div>
+
+</body>
+</html>
