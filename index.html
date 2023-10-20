@@ -147,11 +147,13 @@ html {
 </div>
 <div class="content">
   <h2 style="text-align:center;">Abstract</h2>
+  <br>
   <span style="font-size: larger;">In this paper, we address the problem of simultaneous relighting and novel view synthesis of a complex scene from multi-view images with a limited number of light sources. We propose an analysis-synthesis approach called Relit-NeuLF. Following the recent neural 4D light field network (NeuLF), Relit-NeuLF first leverages a two-plane light field representation to parameterize each ray in a 4D coordinate system, enabling efficient learning and inference. Then, we recover the spatially-varying bidirectional reflectance distribution function (SVBRDF) of a 3D scene in a self-supervised manner. A DecomposeNet learns to map each ray to its SVBRDF components: albedo, normal, and roughness. Based on the decomposed BRDF components and conditioning light directions, a RenderNet learns to synthesize the color of the ray. To self-supervise the SVBRDF decomposition, we encourage the predicted ray color to be close to the physically-based rendering result using the microfacet model. Comprehensive experiments demonstrate that the proposed method is efficient and effective on both synthetic data and real-world human face data, and outperforms the state-of-the-art results.</span>
 </div>
 
 <div class="content">
   <h2>Approach</h2>
+  <br>
   <span style="font-size: larger;"> An overview of our proposed Relit-NeuLF. The input is the 4D coordinate of a ray and a light direction. The output is the RGB radiance of the ray under the light direction.</span>
   <br>
   <img src="./pipeline.png" style="width: 100%"> <br>
@@ -160,6 +162,7 @@ html {
 
 <div class="content">
   <h2><a href=https://huggingface.co/datasets/lizhong323/LumiView>LumiView Dataset</a></h2>
+  <br>
   <span style="font-size: larger;"> We used Blender’s physically based path tracer renderer and rendered 3 textured objects: synthetic face, wood train, and face mask. We set up 5 × 5 camera views on the front hemisphere, set 105 directional light sources around the full sphere, and render at a resolution of 800 × 800 pixels. Our rendered data could be download <a href="https://huggingface.co/datasets/lizhong323/LumiView/resolve/main/data.zip">here</a>.
   </span>
   <div style="text-align: center;">
@@ -168,7 +171,8 @@ html {
 </div>
 
 <div class="content">
-  <h2>Relighting and View Real Results</h2>
+  <h2>Relighting and Novel View Synthesis Results</h2>
+  <br>
   <span style="font-size: larger;">Our Relit-NeuLF model can generate rendering results
     under novel viewpoints and novel lighting directions. Here, we show qualitative relighting results for different synthetic and real data.</span>
   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -178,7 +182,13 @@ html {
 </div>
 
 <div class="content">
-  <h2>HDRI relighting results</h2>
+  <h2>HDRI Relighting Results</h2>
+  <br>
+  <span style="font-size: larger;"> We demonstrate the ability
+    of our method to synthesize visually pleasing relighting under arbitrary HDRI environment maps. Because our method can recover the
+    reflectance under novel lighting directions with a high angular resolution, we can relight the object by treating an HDRI environment
+    map as a collection of OLAT lighting conditions.
+  </span>
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <img src="./gif/env_synthetic_fc.gif" style="width: 54%;">
     <img src="./gif/env_synthetic.gif" style="width: 44%;">
@@ -190,13 +200,6 @@ html {
     <img src="./gif/env_wt.gif" style="width: 32%;">
   </div>
   
-
-  <br>
-  <span style="font-size: larger;"> We demonstrate the ability
-    of our method to synthesize visually pleasing relighting under arbitrary HDRI environment maps. Because our method can recover the
-    reflectance under novel lighting directions with a high angular resolution, we can relight the object by treating an HDRI environment
-    map as a collection of OLAT lighting conditions.
-  </span>
 </div>
 
 
