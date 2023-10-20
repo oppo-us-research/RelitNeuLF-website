@@ -127,8 +127,8 @@ html {
 <div class="content">
   <h1><strong>Relit-NeuLF: Efficient Novel View Synthesis with Neural 4D Light Field</strong></h1>
   <h2 style="text-align:center;"><strong></strong>ACM MM 2023</strong></h2>
-  <p id="authors"><a href="https://sites.google.com/site/lizhong19900216">Zhong Li<sup>1</sup></a> <a href="https://lsongx.github.io/">Liangchen Song<sup>2</sup></a> <a href="https://zhangchen8.github.io/">Zhang Chen<sup>1</sup></a> <a href="https://www.linkedin.com/in/xiangyu-du-9b1216113/">Xiangyu Du<sup>1</sup></a> <a href="https://lelechen63.github.io/">Lele Chen<sup>1</sup></a> 
-  <p id="authors"><a href="https://cse.buffalo.edu/~jsyuan/">Junsong Yuan<sup>2</sup></a><a href="https://www.linkedin.com/in/yi-xu-42654823/">Yi Xu<sup>1</sup></a>
+  <p id="authors"><a href="https://sites.google.com/site/lizhong19900216">Zhong Li<sup>1</sup></a> <a href="https://lsongx.github.io/">Liangchen Song<sup>2</sup></a> <a href="https://zhangchen8.github.io/">Zhang Chen<sup>1</sup></a> <a href="https://www.linkedin.com/in/xiangyu-du-9b1216113/">Xiangyu Du<sup>1</sup></a> <a href="https://lelechen63.github.io/">Lele Chen<sup>1</sup></a><a href="https://cse.buffalo.edu/~jsyuan/">Junsong Yuan<sup>2</sup></a><a href="https://www.linkedin.com/in/yi-xu-42654823/">Yi Xu<sup>1</sup></a>
+    <br>
     <br><sup>1</sup>OPPO US Research Center
     <br><sup>2</sup>University at Buffalo 
   </span></p>
@@ -147,21 +147,21 @@ html {
 </div>
 <div class="content">
   <h2 style="text-align:center;">Abstract</h2>
-  <p>In this paper, we address the problem of simultaneous relighting and novel view synthesis of a complex scene from multi-view images with a limited number of light sources. We propose an analysis-synthesis approach called Relit-NeuLF. Following the recent neural 4D light field network (NeuLF), Relit-NeuLF first leverages a two-plane light field representation to parameterize each ray in a 4D coordinate system, enabling efficient learning and inference. Then, we recover the spatially-varying bidirectional reflectance distribution function (SVBRDF) of a 3D scene in a self-supervised manner. A DecomposeNet learns to map each ray to its SVBRDF components: albedo, normal, and roughness. Based on the decomposed BRDF components and conditioning light directions, a RenderNet learns to synthesize the color of the ray. To self-supervise the SVBRDF decomposition, we encourage the predicted ray color to be close to the physically-based rendering result using the microfacet model. Comprehensive experiments demonstrate that the proposed method is efficient and effective on both synthetic data and real-world human face data, and outperforms the state-of-the-art results.</p>
+  <span style="font-size: larger;">In this paper, we address the problem of simultaneous relighting and novel view synthesis of a complex scene from multi-view images with a limited number of light sources. We propose an analysis-synthesis approach called Relit-NeuLF. Following the recent neural 4D light field network (NeuLF), Relit-NeuLF first leverages a two-plane light field representation to parameterize each ray in a 4D coordinate system, enabling efficient learning and inference. Then, we recover the spatially-varying bidirectional reflectance distribution function (SVBRDF) of a 3D scene in a self-supervised manner. A DecomposeNet learns to map each ray to its SVBRDF components: albedo, normal, and roughness. Based on the decomposed BRDF components and conditioning light directions, a RenderNet learns to synthesize the color of the ray. To self-supervise the SVBRDF decomposition, we encourage the predicted ray color to be close to the physically-based rendering result using the microfacet model. Comprehensive experiments demonstrate that the proposed method is efficient and effective on both synthetic data and real-world human face data, and outperforms the state-of-the-art results.</span>
 </div>
 
 <div class="content">
   <h2>Approach</h2>
-  <p> An overview of our proposed Relit-NeuLF. The input is the 4D coordinate of a ray and a light direction. The output is the RGB radiance of the ray under the light direction.</p>
+  <span style="font-size: larger;"> An overview of our proposed Relit-NeuLF. The input is the 4D coordinate of a ray and a light direction. The output is the RGB radiance of the ray under the light direction.</span>
   <br>
   <img src="./pipeline.png" style="width: 100%"> <br>
-  <p> Our DecomposeNet first takes the 4D coordinate as input and outputs SVBRDF parameters. Next, the SVBRDF parameters together with the light direction are fed into an implicit rendering network (RenderNet) to synthesize the target color. The network is trained end-to-end with photometric loss and self-supervised rendering loss.</p>
+  <span style="font-size: larger;"> Our DecomposeNet first takes the 4D coordinate as input and outputs SVBRDF parameters. Next, the SVBRDF parameters together with the light direction are fed into an implicit rendering network (RenderNet) to synthesize the target color. The network is trained end-to-end with photometric loss and self-supervised rendering loss.</span>
 </div>
 
 <div class="content">
   <h2><a href=https://huggingface.co/datasets/lizhong323/LumiView>LumiView Dataset</a></h2>
-  <p> We used Blender’s physically based path tracer renderer and rendered 3 textured objects: synthetic face, wood train, and face mask. We set up 5 × 5 camera views on the front hemisphere, set 105 directional light sources around the full sphere, and render at a resolution of 800 × 800 pixels. Our rendered data could be download <a href="https://huggingface.co/datasets/lizhong323/LumiView/resolve/main/data.zip">here</a>.
-  </p>
+  <span style="font-size: larger;"> We used Blender’s physically based path tracer renderer and rendered 3 textured objects: synthetic face, wood train, and face mask. We set up 5 × 5 camera views on the front hemisphere, set 105 directional light sources around the full sphere, and render at a resolution of 800 × 800 pixels. Our rendered data could be download <a href="https://huggingface.co/datasets/lizhong323/LumiView/resolve/main/data.zip">here</a>.
+  </span>
   <div style="text-align: center;">
     <img src="./dataset_teaser.png" style="width: 95%; margin: 0 auto;">
   </div>
@@ -169,10 +169,8 @@ html {
 
 <div class="content">
   <h2>Relighting and View Real Results</h2>
-  <p> Our Relit-NeuLF model can generate rendering results
-    under novel viewpoints and novel lighting directions. Here, we show qualitative relighting results for different synthetic and real 
-    data.
-  </p>
+  <span style="font-size: larger;">Our Relit-NeuLF model can generate rendering results
+    under novel viewpoints and novel lighting directions. Here, we show qualitative relighting results for different synthetic and real data.</span>
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <img src="./gif/fvvre_synthetic.gif" style="width: 50%;">
     <img src="./gif/fvvre_real.gif" style="width: 48%;">
@@ -194,11 +192,11 @@ html {
   
 
   <br>
-  <p> We demonstrate the ability
+  <span style="font-size: larger;"> We demonstrate the ability
     of our method to synthesize visually pleasing relighting under arbitrary HDRI environment maps. Because our method can recover the
     reflectance under novel lighting directions with a high angular resolution, we can relight the object by treating an HDRI environment
     map as a collection of OLAT lighting conditions.
-  </p>
+  </span>
 </div>
 
 
@@ -222,11 +220,10 @@ html {
 </div> -->
 <div class="content">
   <h2>Acknowledgements</h2>
-  <p>We wish to convey our gratitude to our previous intern, Yuqi Ding,
+  <span style="font-size: larger;">We wish to convey our gratitude to our previous intern, Yuqi Ding,
     for his foundational efforts on the dome structure and the develop-
-    ment of the multi-lighting system.</p>
-  <p>Website adapted from  <a href="https://dreambooth.github.io/">Dreambooth</a>.</p>
-</div>
+    ment of the multi-lighting system. Website adapted from  <a href="https://dreambooth.github.io/">Dreambooth</a>.</span>
+</span>
 
 </body>
 </html>
