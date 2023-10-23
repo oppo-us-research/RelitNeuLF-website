@@ -1,0 +1,12 @@
+In this paper, given sparsely sampled images illuminated by sparse LED light sources ，we present a two-stage analysis-synthesis MLP neural network for free-viewpoint rendering and relighting.
+
+To achieve this, we extend a neural 4D light field representation with relighting capability by using SVBRDF decomposition. We first design a DecomposeNet that disentangles each ray's intrinsic SVBRDF components (albedo, normal, and roughness). We then use a RenderNet to use albedo, normal, roughness, and ray direction as input with light direction as conditioning to regress ray color.
+
+Our HDRI relighting results on synthetic data. Each subject is relit by three different environment maps. Note that the subject's appearance correctly reflects the dominant light source in the environment map.
+
+Here we show the albedo/normal decomposition results on the synthetic toy train, face cover scene. The results show that our DecomposeNet can generate reasonable view-independent normal, albedo, roughness field by using self-supervised microfacet rendering loss. 
+
+We qualitatively show our rendering results of three real human subjects under simultaneous novel view synthesis and relighting. The lighting effects (e.g. shadows and diffuse reflection) are consistent across different viewpoints. 
+
+We have shown four HDRI relighting results across different human identities using the light probe images. Our relighting results are physically natural, and the specular highlights on the faces correctly reflect the color and position of the highlights in the light probe images.
+
